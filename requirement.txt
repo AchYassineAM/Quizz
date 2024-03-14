@@ -2,4 +2,6 @@ pip install streamlit
 pip install pandas
 
 import library streamlit
-import library streamlit
+import streamlit as st
+import pandas as pd
+import numpy as np
