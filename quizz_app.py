@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import openpyxl
 
 # Charger le fichier Excel contenant les 99 questions et réponses
 file_path = "99Questions.xlsx"
