@@ -4,7 +4,7 @@ import numpy as np
 
 # Charger le fichier Excel contenant les 99 questions et réponses
 file_path = r"/main/99Questions.xlsx"
-df = pd.read_excel(r"/main/99Questions.xlsx")
+df = pd.read_excel(r"https://github.com/AchYassineAM/Quizz/blob/main/99Questions.xlsx")
 
 # Titre de l'application
 st.title("Quiz App")
