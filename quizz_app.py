@@ -5,7 +5,7 @@ import openpyxl
 
 # Charger le fichier Excel contenant les 99 questions et réponses
 file_path = "99Questions.xlsx"
-df = pd.read_excel("99Questions.xlsx")
+df = pd.read_excel(file_path)
 
 # Titre de l'application
 st.title("Quiz App")
@@ -35,7 +35,11 @@ if st.button("Générer"):
     final_selected_questions = pd.concat([included_df, random_questions])
 
     # Afficher le tableau résultant
-    st.write(final_selected_questions[['Numéro', 'Question', 'Réponse']])
+    st.write('<style>table { table-layout: fixed; }</style>', unsafe_allow_html=True)
+    st.write('<style>th, td { word-wrap: break-word; }</style>', unsafe_allow_html=True)
+    st.write(final_selected_questions[['Numéro', 'Question', 'Réponse']].to_html(escape=False), unsafe_allow_html=True)
 else:
     # Afficher le tableau complet si le bouton n'a pas encore été cliqué
-    st.write(df[['Numéro', 'Question', 'Réponse']])
+    st.write('<style>table { table-layout: fixed; }</style>', unsafe_allow_html=True)
+    st.write('<style>th, td { word-wrap: break-word; }</style>', unsafe_allow_html=True)
+    st.write(df[['Numéro', 'Question', 'Réponse']].to_html(escape=False), unsafe_allow_html=True)
